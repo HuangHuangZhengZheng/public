@@ -2,7 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/</loc><lastmod>2024-04-20T18:57:22&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2024-04-20T18:57:22&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/categories/</loc></url><url>
-            <loc>http://example.org/tags/</loc></url></urlset>
+            <loc>http://localhost:1313/csapp_datalab/</loc><lastmod>2024-04-21T21:59:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2024-04-21T21:59:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/posts/</loc><lastmod>2024-04-21T21:59:35&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

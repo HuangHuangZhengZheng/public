@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Csapp_datalab - My New Hugo Site</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://localhost:1313/csapp_datalab/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Csapp_datalab">
+  <meta property="og:description" content="int bit-level operations 德摩根律（位运算和集合论） 与：&amp;amp; 非：~ 两者组合已经可以表示四个基本运算：与、非、或、异或。 移动位运算 注意是否为无符号数，有符号数的移位运算规则与无符号数不同。 有符号数的移位运算规则： 左移：符号位不变，右边补0。 右移：符号位不变，左边补符号位。 无符号数的移位运算规则： 左移：左边补0。 右移：右边补0。 与运算（&amp;amp;）取特定的位数，用于位层面条件判断 减法的实现 A &#43; ~A = -1 &amp;ndash;&amp;gt; A &#43; (~A&#43;1) = 0 减法的描述范围问题 做差取符号位 掩码操作 1 2 3 4 5 int conditional(int x, int y, int z) { int exp1 = ~(!!x) &#43; 1; int exp2 = ~(!x) &#43; 1; return (exp1&amp;amp;y) &#43; (exp2&amp;amp;z); } 位层面分类讨论 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 /* howManyBits - return the minimum number of bits required to represent x in * two&amp;#39;s complement(补码系统) * Examples: howManyBits(12) = 5 * howManyBits(298) = 10 * howManyBits(-5) = 4 负数的话 取反 同理 * howManyBits(0) = 1 * howManyBits(-1) = 1 特殊点?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-21T21:59:35+08:00">
+    <meta property="article:modified_time" content="2024-04-21T21:59:35+08:00">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/logo.png"><meta name="twitter:title" content="Csapp_datalab">
+<meta name="twitter:description" content="int bit-level operations 德摩根律（位运算和集合论） 与：&amp; 非：~ 两者组合已经可以表示四个基本运算：与、非、或、异或。 移动位运算 注意是否为无符号数，有符号数的移位运算规则与无符号数不同。 有符号数的移位运算规则： 左移：符号位不变，右边补0。 右移：符号位不变，左边补符号位。 无符号数的移位运算规则： 左移：左边补0。 右移：右边补0。 与运算（&amp;）取特定的位数，用于位层面条件判断 减法的实现 A &#43; ~A = -1 &ndash;&gt; A &#43; (~A&#43;1) = 0 减法的描述范围问题 做差取符号位 掩码操作 1 2 3 4 5 int conditional(int x, int y, int z) { int exp1 = ~(!!x) &#43; 1; int exp2 = ~(!x) &#43; 1; return (exp1&amp;y) &#43; (exp2&amp;z); } 位层面分类讨论 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 /* howManyBits - return the minimum number of bits required to represent x in * two&#39;s complement(补码系统) * Examples: howManyBits(12) = 5 * howManyBits(298) = 10 * howManyBits(-5) = 4 负数的话 取反 同理 * howManyBits(0) = 1 * howManyBits(-1) = 1 特殊点?">
+      <meta name="twitter:site" content="@xxxx">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/csapp_datalab/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Csapp_datalab",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/csapp_datalab\/"
+        },"genre": "posts","wordcount":  318 ,
+        "url": "http:\/\/localhost:1313\/csapp_datalab\/","datePublished": "2024-04-21T21:59:35+08:00","dateModified": "2024-04-21T21:59:35+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "HHZZ"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My New Hugo Site"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Csapp_datalab</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>HHZZ</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-21">2024-04-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;318 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#int-bit-level-operations">int bit-level operations</a>
+      <ul>
+        <li><a href="#德摩根律位运算和集合论">德摩根律（位运算和集合论）</a></li>
+        <li><a href="#移动位运算">移动位运算</a></li>
+        <li><a href="#与运算取特定的位数用于位层面条件判断">与运算（&amp;）取特定的位数，用于位层面条件判断</a></li>
+        <li><a href="#减法的实现">减法的实现</a></li>
+        <li><a href="#减法的描述范围问题">减法的描述范围问题</a></li>
+        <li><a href="#掩码操作">掩码操作</a></li>
+        <li><a href="#位层面分类讨论">位层面分类讨论</a></li>
+      </ul>
+    </li>
+    <li><a href="#float-bit-level-operations">float bit-level operations</a>
+      <ul>
+        <li><a href="#float-to-binary">float to binary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="int-bit-level-operations">int bit-level operations</h2>
+<h3 id="德摩根律位运算和集合论">德摩根律（位运算和集合论）</h3>
+<ul>
+<li>与：&amp;</li>
+<li>非：~</li>
+<li>两者组合已经可以表示四个基本运算：与、非、或、异或。</li>
+</ul>
+<h3 id="移动位运算">移动位运算</h3>
+<ul>
+<li>注意是否为无符号数，有符号数的移位运算规则与无符号数不同。</li>
+<li>有符号数的移位运算规则：
+<ul>
+<li>左移：符号位不变，右边补0。</li>
+<li>右移：符号位不变，左边补符号位。</li>
+</ul>
+</li>
+<li>无符号数的移位运算规则：
+<ul>
+<li>左移：左边补0。</li>
+<li>右移：右边补0。</li>
+</ul>
+</li>
+</ul>
+<h3 id="与运算取特定的位数用于位层面条件判断">与运算（&amp;）取特定的位数，用于位层面条件判断</h3>
+<h3 id="减法的实现">减法的实现</h3>
+<ul>
+<li><strong>A + ~A = -1 &ndash;&gt; A + (~A+1) = 0</strong></li>
+</ul>
+<h3 id="减法的描述范围问题">减法的描述范围问题</h3>
+<ul>
+<li>做差取符号位</li>
+</ul>
+<h3 id="掩码操作">掩码操作</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">conditional</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">exp1</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="o">!!</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">exp2</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">exp1</span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">exp2</span><span class="o">&amp;</span><span class="n">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="位层面分类讨论">位层面分类讨论</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* howManyBits - return the minimum number of bits required to represent x in
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *             two&#39;s complement(补码系统)
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  Examples: howManyBits(12) = 5
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *            howManyBits(298) = 10
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *            howManyBits(-5) = 4 负数的话 取反 同理  
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *            howManyBits(0)  = 1
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *            howManyBits(-1) = 1 特殊点?
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *            howManyBits(0x80000000) = 32
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  Max ops: 90
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  Rating: 4
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">howManyBits</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 取为正数操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">31</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">flag</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">flag</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">x</span><span class="p">));</span> <span class="c1">// 掩码分类思想
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 0000 0100 0000 0000 0000 0000 0000 0000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// Flag_i = !!(x &gt;&gt; i) 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">int</span> <span class="n">bit16</span> <span class="o">=</span> <span class="o">!!</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// log2 N
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">bit16</span><span class="p">;</span> <span class="c1">// &gt;&gt;= 右移赋值运算符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">bit8</span> <span class="o">=</span> <span class="o">!!</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">bit8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">bit4</span> <span class="o">=</span> <span class="o">!!</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">bit4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">bit2</span> <span class="o">=</span> <span class="o">!!</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">bit2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">bit1</span> <span class="o">=</span> <span class="o">!!</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&gt;&gt;=</span> <span class="n">bit1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">bit0</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// x = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">bit0</span><span class="o">+</span><span class="n">bit1</span><span class="o">+</span><span class="n">bit2</span><span class="o">+</span><span class="n">bit4</span><span class="o">+</span><span class="n">bit8</span><span class="o">+</span><span class="n">bit16</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="float-bit-level-operations">float bit-level operations</h2>
+<p>$$
+float = (-1)^s * M * 2^E
+$$</p>
+<h3 id="float-to-binary">float to binary</h3>
+<ul>
+<li>sign bit: $s$</li>
+<li>exponent bits: $E$ &mdash;&gt; $E = e - 127$</li>
+<li>mantissa bits: $M$&mdash;&gt;frac add $1$ and $0$ to the left until $M$ has 23 bits</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-04-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/csapp_datalab/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/csapp_datalab/" data-title="Csapp_datalab" data-via="xxxx"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/csapp_datalab/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/csapp_datalab/" data-title="Csapp_datalab"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/csapp_datalab/" data-title="Csapp_datalab"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/csapp_datalab/" data-title="Csapp_datalab"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.125.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HHZZ</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
